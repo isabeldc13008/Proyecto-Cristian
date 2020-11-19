@@ -1,0 +1,65 @@
+﻿@model DataPaginador<Usuario>
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Bordered Table</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th style="width: 10px">Id Usuario</th>
+                        <th>Correo</th>
+                        <th>Rol</th>
+                        <th>Estado</th>
+                        
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Usuario a in Model.Lista)
+                    {
+                        <tr>
+
+                            <td>@a.id_usuario</td>
+                            <td>@a.correo</td>
+                            @{ if (a.rol == 1)
+                                {<td>Usuario</td> }
+                                else {<td>Administrador</td>  } } 
+                            @{ if (a.estado == 1)
+                                { <td>Activo</td>}
+                                else { <td>Inactivo</td>}}
+                            <td>
+                                <a href="/Producto/Producto/EditarU/?id=@a.id_usuario" class="btn btn-primary mb-2 mt-2">Editar</a>
+                                @{
+                                    if (a.estado == 0)
+                                    {<a href="/Producto/Producto/EstadoU/?id=@a.id_usuario&estado=@a.estado" class="btn btn-success">Activar</a> }
+                                    else
+                                    {<a href="/Producto/Producto/EstadoU/?id=@a.id_usuario&estado=@a.estado" class="btn btn-danger">Inactivar</a> }
+
+                                }
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer clearfix">
+            <!-- <ul class="pagination pagination-sm m-0 float-right">
+                <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+            </ul>-->
+            @Html.Raw(Model.Pagi_info)
+            @Html.Raw(Model.Pagi_navegacion)
+        </div>
+    </div>
+    <!-- /.card -->
+    <!-- /.card -->
+</div>
+

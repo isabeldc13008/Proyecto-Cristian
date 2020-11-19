@@ -1,0 +1,45 @@
+﻿@page
+@model RegisterModel
+
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="my-auto mx-auto xl:ml-20 bg-white xl:bg-transparent px-5 sm:px-8 py-8 xl:p-0 rounded-md shadow-md xl:shadow-none w-full sm:w-3/4 lg:w-2/4 xl:w-auto">
+
+    <h2 class="intro-x font-bold text-2xl xl:text-3xl text-center xl:text-left">
+        Registrarse
+    </h2>
+    <div class="intro-x mt-2 text-gray-500 xl:hidden text-center">Crea una cuenta, es gratis</div>
+    <div class="form-control">
+        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <div class="intro-x mt-8">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <input asp-for="Input.Email" class="intro-x login__input input input--lg border border-gray-300 block" placeholder="Email" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                <input asp-for="Input.Password" class="intro-x login__input input input--lg border border-gray-300 block mt-4" placeholder="Contraseña" />
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+
+                <input asp-for="Input.ConfirmPassword" class="intro-x login__input input input--lg border border-gray-300 block mt-4" placeholder="Confirmacion de contraseña" />
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+
+               
+
+            </div>
+            <div class="intro-x flex items-center text-gray-700 mt-4 text-xs sm:text-sm">
+                <input type="checkbox" class="input border mr-2" id="remember-me">
+                <label class="cursor-pointer select-none" for="remember-me">Acepto terminos</label>
+                <a class="text-theme-1 ml-1" href="">Politica de privacidad</a>.
+            </div>
+            <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
+                <button type="submit" class="button button--lg w-full xl:w-32 text-white bg-theme-1 xl:mr-3">Registrarse</button>
+                <button asp-page="./Login" class="button button--lg w-full xl:w-32 text-gray-700 border border-gray-300 mt-3 xl:mt-0">Login</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+

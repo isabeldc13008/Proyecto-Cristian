@@ -61,9 +61,9 @@ namespace ProyectoCristian
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapAreaControllerRoute(
-                 name: "Productos",
-                 areaName: "Productos",
-                 pattern: "Productos/{controller=Productos}/{action=Index}/{id?}");
+                 name: "Producto",
+                 areaName: "Producto",
+                 pattern: "Producto/{controller=Producto}/{action=Index}/{id?}");
 
 
                 endpoints.MapAreaControllerRoute(
