@@ -740,7 +740,6 @@ C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\bin\Debug\netcorea
 C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\obj\Debug\netcoreapp3.1\ProyectoCristian.csprojAssemblyReference.cache
 C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\obj\Debug\netcoreapp3.1\ProyectoCristian.AssemblyInfoInputs.cache
 C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\obj\Debug\netcoreapp3.1\ProyectoCristian.AssemblyInfo.cs
 C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\obj\Debug\netcoreapp3.1\ProyectoCristian.csproj.CoreCompileInputs.cache
@@ -772,6 +771,8 @@ C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\obj\Debug\netcorea
 C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\obj\Debug\netcoreapp3.1\Razor\Areas\Login\Views\Login\Index.cshtml.g.cs
+C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\obj\Debug\netcoreapp3.1\Razor\Areas\Login\Views\_ViewImports.cshtml.g.cs
+C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\obj\Debug\netcoreapp3.1\Razor\Areas\Login\Views\_ViewStart.cshtml.g.cs
 C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\obj\Debug\netcoreapp3.1\Razor\Areas\Producto\Views\Producto\Agregar.cshtml.g.cs
 C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\obj\Debug\netcoreapp3.1\Razor\Areas\Producto\Views\Producto\AgregarU.cshtml.g.cs
 C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\obj\Debug\netcoreapp3.1\Razor\Areas\Producto\Views\Producto\Chat.cshtml.g.cs
@@ -803,5 +804,3 @@ C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\obj\Debug\netcorea
 C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\obj\Debug\netcoreapp3.1\ProyectoCristian.dll
 C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\obj\Debug\netcoreapp3.1\ProyectoCristian.pdb
 C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\obj\Debug\netcoreapp3.1\ProyectoCristian.genruntimeconfig.cache
-C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\obj\Debug\netcoreapp3.1\Razor\Areas\Login\Views\_ViewImports.cshtml.g.cs
-C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\obj\Debug\netcoreapp3.1\Razor\Areas\Login\Views\_ViewStart.cshtml.g.cs

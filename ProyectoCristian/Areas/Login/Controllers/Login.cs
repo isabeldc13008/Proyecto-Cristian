@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProyectoCristian.Areas.Producto.Models;
 using ProyectoCristian.Data;
@@ -37,7 +38,11 @@ namespace ProyectoCristian.Areas.Login.Controllers
             }
             if (busqueda.rol == 1)
             {
+                string id =busqueda.id_usuario.ToString();
+               
+                HttpContext.Session.SetString("idusuario", id);
                 return RedirectToAction("Index", "Usuarios", new { @area="Usuarios"});
+                
               
             }
             else if (busqueda.rol == 2)

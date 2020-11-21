@@ -32,6 +32,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
     <link href="~/usuario/pushbar/css/pushbar.css" rel="stylesheet" />
     <link href="~/usuario/css/carro.css" rel="stylesheet" />
+
 </head>
 <body>
     <div data-pushbar-id="pushbar-menu" class="menu" data-pushbar-direction="right">
@@ -40,26 +41,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
 
         <h1 class="titulo">Carrito de compras</h1>
-        <div class="item">
-            <img src="" />
-            <div class="textos">
-                <p class="nombre-item" id="nombre">Articulo: Cuas</p>
-                <p id="precio">$32323</p>
-                <p class="text text-danger eliminar">x</p>
+        <form method="post" action="/Usuarios/Usuarios/guardar">
+            <div id="item">
+
+
             </div>
-        </div>
-         <div>
-             <label class="titulocantidad">Cantidad</label>
-             <input type="number" class="form-control cantidad"/>
-         </div>
-        <div class="total" >
-            <p class="precio-total" >Total: $23 </p>
-            
-        </div>
+            <div class="total" id="total">
+
+            </div>
+            <div class="botones" style="margin-left:-65px;">
+                <div class="col-6 mt-3 mb-3">
+                    <button type="submit"  class="btn btn-success terminar" style="margin-top: 12px; margin-left: 80px;">Terminar compra</button>
+                </div>
+
+            </div>
+        </form>
     </div>
-    
 
 
+   
 
     <div class="banner_top innerpage" id="home">
         <div class="wrapper_top_w3layouts">
@@ -340,7 +340,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="product-shoe-info shoe">
                                     <div class="men-pro-item">
                                         <div class="men-thumb-item">
+                                            <input type="hidden" id="idproducto" value="@a.id_productos" />
                                             <img src="~/imagenes/@a.Imagen" alt="">
+                                            <input type="hidden" id="imgp" value="@a.Imagen" />
                                             <div class="men-cart-pro">
                                                 <div class="inner-men-cart-pro">
                                                     <a href="single.html" class="link-product-add-cart">Ver detalle</a>
@@ -350,13 +352,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         </div>
                                         <div class="item-info-product">
                                             <h4>
-                                                <a href="single.html">@a.nombre </a>
+                                                <input type="hidden" id="nombrep" value="@a.nombre" />
+                                                <a id="nombrep" value="@a.nombre">@a.nombre </a>
                                             </h4>
                                             <div class="info-product-price">
                                                 <div class="grid_meta">
                                                     <div class="product_price">
                                                         <div class="grid-price ">
-                                                            <span class="money ">@a.precio</span>
+                                                            <input type="hidden" id="preciop" value="@a.precio" />
+                                                            <span id="preciop" class="money ">@a.precio</span>
                                                         </div>
                                                     </div>
                                                     <ul class="stars">
@@ -367,17 +371,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                         <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
                                                     </ul>
                                                 </div>
-                                                <div class="shoe single-item hvr-outline-out" data-toggle="collapse" data-pushbar-target="pushbar-menu">
+                                                <div class="shoe single-item hvr-outline-out" id="abrir" data-toggle="collapse" data-pushbar-target="pushbar-menu">
 
-                                                    <form action="#" method="post">
-                                                        <input type="hidden" name="cmd" value="_cart">
-                                                        <input type="hidden" name="add" value="@a.id_productos">
-                                                        <input type="hidden" name="shoe_item" value="@a.nombre">
-                                                        <input type="hidden" name="amount" value="@a.precio">
-                                                        <button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
 
-                                                        <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-                                                    </form>
+                                                    <button type="button" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+
+
 
                                                 </div>
                                             </div>
@@ -630,6 +629,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- //footer -->
     <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
     <!-- js -->
+    <script src="~/usuario/js/carrito.js"></script>
     <script type="text/javascript" src="~/usuario/js/jquery-2.1.4.min.js"></script>
     <script src="~/usuario/pushbar/js/pushbar.js"></script>
     <script>
@@ -640,20 +640,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </script>
     <!-- //js -->
     <!-- cart-js -->
-
     <script>
-        shoe.render();
-
-        shoe.cart.on('shoe_checkout', function (evt) {
-            var items, len, i;
-
-            if (this.subtotal() > 0) {
-                items = this.items();
-
-                for (i = 0, len = items.length; i < len; i++) { }
+        $("#terminar").click(() => {
+            let objetos = JSON.parse(localStorage.getItem("productos"));
+            for (let i = 0; i < objetos.length; i++) {
+                console.log(objetos[i]);
             }
+            /*$.ajax({
+                method: "POST",
+                url: "";
+                /*data: objetos,
+                dataType: "JSON"
+            }).done((Modelstate) => {
+               
+            });*/
+
+           
         });
+
     </script>
+
     <!-- //cart-js -->
     <!-- /nav -->
     <script src="~/usuario/js/modernizr-2.6.2.min.js"></script>
