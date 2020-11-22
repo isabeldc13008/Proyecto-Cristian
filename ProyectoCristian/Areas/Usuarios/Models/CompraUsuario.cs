@@ -10,6 +10,6 @@ namespace ProyectoCristian.Areas.Usuarios.Models
     {
         public int total { get; set; }
         public int cantidad { get; set; }
-        public List<Productos> productosc { get; set; }
+        public List<Productos> Productos { get; set; }
     }
 }

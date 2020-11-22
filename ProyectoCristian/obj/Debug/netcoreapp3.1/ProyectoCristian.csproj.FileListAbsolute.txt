@@ -804,3 +804,4 @@ C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\obj\Debug\netcorea
 C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\obj\Debug\netcoreapp3.1\ProyectoCristian.dll
 C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\obj\Debug\netcoreapp3.1\ProyectoCristian.pdb
 C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\obj\Debug\netcoreapp3.1\ProyectoCristian.genruntimeconfig.cache
+C:\Users\isabe\source\repos\ProyectoCristian\ProyectoCristian\obj\Debug\netcoreapp3.1\ProyectoCristian.csprojAssemblyReference.cache

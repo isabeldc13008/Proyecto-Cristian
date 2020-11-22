@@ -39,6 +39,7 @@ namespace ProyectoCristian.Areas.Usuarios.Controllers
 
         public IActionResult guardar(CompraUsuario e)
         {
+    
             string valor = HttpContext.Session.GetString("idusuario");
             int usuario = int.Parse(valor);
             DateTime fecha = DateTime.Now;
@@ -50,13 +51,14 @@ namespace ProyectoCristian.Areas.Usuarios.Controllers
                 {
                     db.Add(compra);
                     db.SaveChanges();
-                    foreach (Productos t in e.productosc) {
+                    foreach (Productos t in e.Productos) {
                         DetalleCompra j = new DetalleCompra
                         {
                             id_producto = t.id_productos,
                             id_compra = compra.Id_compra
                         };
                         db.Add(j);
+                        
                     }
                     db.SaveChanges();
                     transaction.Commit();

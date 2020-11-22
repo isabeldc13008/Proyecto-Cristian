@@ -6,17 +6,18 @@ let divItem = document.getElementById("item");
 let btnTerminar = document.getElementById("terminar");
 let conta = 0;
 btn.addEventListener('click', () => {
-    conta++;
+    
     let idproducto = document.getElementById("idproducto").value;
     let nombrep = document.getElementById("nombrep").value;
     let precio = document.getElementById("preciop").value;
     let imagen = document.getElementById("imgp").value;
-
+    
 
     let articulos = JSON.parse(localStorage.getItem("productos"));
     if (articulos == null) {
         divItem.innerHTML += `
-             <input type="hidden" name="productosc[${conta}].id_productos" value="${idproducto}"/>
+ <div id="aqui">
+             <input type="hidden" name="Productos[${conta}].id_productos" value="${idproducto}" />
                 <img src="../../imagenes/${imagen}" style="width:130px; heigth:100px; margin-top:10px;" />
                 <div class="textos" style="margin-top:-55px;">
                     <p class="nombre-item" id="nombre">Articulo: ${nombrep}</p>
@@ -27,18 +28,19 @@ btn.addEventListener('click', () => {
             <div>
                 <label class="titulocantidad" style="margin-top:10px;">Cantidad</label>
                 <input id="cantidad" type="number" class="form-control cantidad" onchange="totalC(${precio})" value="1" />
-                <input type="hidden" name="productosc[${conta}].cantidad" value="${cantidad}">
+              
             </div>
-            
+            </div>
      `;
         totalC(precio);
+        conta++;
     } else {
 
         articulos.forEach((r) => {
             divItem.innerHTML += `
-            <form id="fproducto">
-             <input type="hidden" name="productosc[${conta}].id_productos" value="${idproducto}"/>
-             <input type="hidden" value="${r.idproducto}"/>
+             <div id="aqui">
+             <input type="hidden" name="Productos[${conta}].id_productos" value="${r.idproducto}"/>
+             
                 <img src="../../imagenes/${r.imagen}" style="width:130px; heigth:100px; margin-top:10px;" />
                 <div class="textos" style="margin-top:-55px;">
                     <p class="nombre-item" id="nombre">Articulo: ${r.nombrep}</p>
@@ -48,19 +50,22 @@ btn.addEventListener('click', () => {
            
             <div>
                 <label class="titulocantidad" style="margin-top:10px;">Cantidad</label>
-                <input id="cantidad" type="number" class="form-control cantidad" onchange="totalC(${r.precio})" value="1" />
-               <input type="hidden" name="productosc[${conta}].cantidad" value="${cantidad}">
+                <input id="cantidad" type="number" class="form-control cantidad" onchange="totalC(${r.precio})"  />
+              
   
             </div>
-            </form>
+           </div>
+            
              `;
+            let cantidad = document.getElementById("cantidad").value;
             totalC(r.precio);
 
         })
+        conta++;
     }
 
-
-    let cantidad = document.getElementById("cantidad").value;
+    
+ 
     const articulo = {
         idproducto,
         nombrep,
@@ -98,7 +103,10 @@ let totalC = (e) => {
     if (!total.empty) {
 
         total.innerHTML = `
-           <p class="precio-total" id="tTotal">Total: ${totalC}</p> `;
+           <p class="precio-total" id="tTotal">Total: ${totalC}</p> 
+            <input type = "hidden" id="total" name="total" value = "${totalC}" />
+            <input type = "hidden" id="cantidad" name="cantidad" value = "${cantidad}" />
+              `;
     }
 }
 
