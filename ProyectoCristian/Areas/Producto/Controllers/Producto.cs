@@ -71,6 +71,7 @@ namespace ProyectoCristian.Areas.Producto.Controllers
         }
 
         public IActionResult Guardar(Productos formulario) {
+          
             if (!ModelState.IsValid) {
                 p.categoria = db.categorias.ToList();
                 return RedirectToAction("Agregar", p);
